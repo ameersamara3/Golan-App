@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "4233046184",
+    "project_id": "golan-7b68f",
+    "storage_bucket": "golan-7b68f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:4233046184:android:19a722cd8bc2a29be23a9d",
+        "android_client_info": {
+          "package_name": "com.example.golan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "4233046184-vrbtdi9uuf7kol0b78nnins4fa7mh86r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD26uRWWGK6OR4e8Z7zHCIKByxBIYkQx9I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "4233046184-vrbtdi9uuf7kol0b78nnins4fa7mh86r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

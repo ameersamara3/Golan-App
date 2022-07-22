@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".AddItem"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:backgroundTint="@color/light_green">
+
+
+        <Spinner
+            android:id="@+id/dpinner"
+            android:layout_width="181dp"
+            android:layout_height="34dp"
+            android:layout_margin="16dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="Category"
+            android:dropDownVerticalOffset="40dp"
+            android:fontFamily="@font/allerta"
+            android:gravity="center"
+            android:spinnerMode="dropdown"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.984"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bug2" />
+
+        <EditText
+            android:id="@+id/notes"
+            android:layout_width="369dp"
+            android:layout_height="159dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/editext"
+            android:drawableRight="@drawable/comment"
+            android:drawablePadding="20dp"
+            android:hint="הערות"
+            android:padding="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dpinner" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/export"
+            android:layout_width="365dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:backgroundTint="@color/green"
+            android:text="הוסף"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/notes" />
+
+        <EditText
+            android:id="@+id/bug2"
+            android:layout_width="94dp"
+            android:layout_height="63dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/editext"
+            android:drawablePadding="20dp"
+            android:fontFamily="sans-serif"
+            android:hint="מספר"
+            android:inputType="number"
+            android:padding="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/textView8"
+            app:layout_constraintTop_toBottomOf="@+id/bug1" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="20dp"
+            android:text="זבוב ים תיכון "
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="96dp"
+            android:layout_marginEnd="28dp"
+            android:text="עש תפוח  "
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/bug1"
+            android:layout_width="94dp"
+            android:layout_height="63dp"
+            android:layout_marginTop="84dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/editext"
+            android:drawablePadding="20dp"
+            android:fontFamily="sans-serif"
+            android:hint="מספר"
+            android:inputType="number"
+            android:padding="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/textView8"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
