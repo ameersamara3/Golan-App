@@ -5,11 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.android.material.button.MaterialButton;
 
 
 public class itemPage extends Fragment {
@@ -32,12 +28,12 @@ private Item item;
         String date = item.getDate();
         date=date.replace("T"," ");
         date=date.substring(0,date.length()-7);
-        TextView area =(TextView)(View)getView().findViewById(R.id.area);
+        TextView section =(TextView)(View)getView().findViewById(R.id.section);
         TextView bug1 =(TextView)(View)getView().findViewById(R.id.bug1);
         TextView bug2 =(TextView)(View)getView().findViewById(R.id.bug2);
         TextView notes =(TextView)(View)getView().findViewById(R.id.notes);
         TextView datee =(TextView)(View)getView().findViewById(R.id.date);
-        area.setText(MainActivity.area.getName());
+        section.setText(MainActivity.section.getName());
         bug1.setText(item.getBug1()+"");
         bug2.setText(item.getBug2()+"");
         datee.setText(date);

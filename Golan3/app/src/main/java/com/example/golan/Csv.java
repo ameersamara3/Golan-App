@@ -10,20 +10,16 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.FileProvider;
 
 import com.google.android.material.button.MaterialButton;
 import com.opencsv.CSVWriter;
@@ -31,7 +27,6 @@ import com.opencsv.CSVWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
@@ -53,7 +48,7 @@ public class Csv extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.csv, container, false);
+        return inflater.inflate(R.layout.fragment_csv, container, false);
     }
     public void onStart() {
         super.onStart();
@@ -62,7 +57,7 @@ public class Csv extends Fragment {
         ma.setActionTitle("הורדת קובץ איקסל");
         initDatePicker();
         initDatePicker2();
-        dateButton = (MaterialButton)(View) getView().findViewById(R.id.datepicker);
+        dateButton = (MaterialButton)(View) getView().findViewById(R.id.datepicker10);
         dateButton.setText(getTodaysDate(true));
         dateButton.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
@@ -73,7 +68,7 @@ public class Csv extends Fragment {
 
             }
         });
-        dateButton2 = (MaterialButton)(View) getView().findViewById(R.id.datepicker2);
+        dateButton2 = (MaterialButton)(View) getView().findViewById(R.id.datepicker11);
         dateButton2.setText(getTodaysDate(false));
         dateButton2.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
@@ -155,12 +150,29 @@ public class Csv extends Fragment {
     public void exportCSV(List<String[]>list) throws IOException {
         File root = android.os.Environment.getExternalStorageDirectory();
         final String filename =root.getAbsolutePath() + "/download"+ "/" + "myData.csv";
-        CSVWriter write= new CSVWriter(new FileWriter(filename));
+        FileWriter fileWriter=new FileWriter(filename);
+        CSVWriter write= new CSVWriter(fileWriter);
         write.writeAll(list);
         write.flush();
-        buttonShareFile(vi);
+        //buttonShareFile(vi);
+        Share(new File(filename));
     }
+    private void Share(File savepath) {
 
+        if (savepath != null) {
+
+            Uri uri = FileProvider.getUriForFile(getActivity(), getActivity().getApplicationContext().getPackageName() + ".provider", savepath);
+
+            Intent i = new Intent(Intent.ACTION_SEND);
+            i.putExtra(Intent.EXTRA_EMAIL, new String[]{"info.daliluk@gmail.com"});
+            i.putExtra(Intent.EXTRA_SUBJECT, "Excel File");
+            //Log.d("URI@!@#!#!@##!", Uri.fromFile(pic).toString() + "   " + pic.exists());
+            i.putExtra(Intent.EXTRA_STREAM, uri);
+            i.setType("text/comma_separated_values/csv");
+            getActivity().startActivity(Intent.createChooser(i, "Share the file ..."));
+
+        }
+    }
     public void buttonShareFile(View view){
         File root = android.os.Environment.getExternalStorageDirectory();
         final String filename =root.getAbsolutePath() + "/download"+ "/" + "myData.csv";

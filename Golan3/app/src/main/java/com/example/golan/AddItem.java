@@ -1,6 +1,7 @@
 package com.example.golan;
 
 
+import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.os.Build;
 import android.os.Bundle;
@@ -11,7 +12,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 
@@ -34,11 +34,12 @@ private AddItem ad;
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.add_item, container, false);
     }
+    @SuppressLint("ResourceAsColor")
     public void onStart() {
         ad=this;
         MainActivity ma=(MainActivity)getActivity();
         ma.setActionTitle("הוספת דיווח");
-        String name = MainActivity.area.getName();
+        String name = MainActivity.section.getName();
         super.onStart();
         FireBase fb = new FireBase(getActivity());
         TextView bug1 =(TextView)(View)getView().findViewById(R.id.bug1);

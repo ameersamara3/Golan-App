@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
+    <color name="purple_200">#FF000000</color>
+    <color name="purple_500">#FF000000</color>
+    <color name="purple_700">#FF000000</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
@@ -14,8 +14,9 @@
     <color name="blue1">#7CB1DA</color>
     <color name="pinkNavigation">#D89696</color>
 
-    <color name="green">#6B6B6B</color>
-    <color name="light_green">#D3D3D3</color>
+    <color name="dark_green">#8ABD8D</color>
+    <color name="white2">#FFFFFFFF</color>
+
 
 
     <color name="colorPrimary">#607D8B</color>

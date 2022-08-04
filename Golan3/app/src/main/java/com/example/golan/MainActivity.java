@@ -1,43 +1,26 @@
 package com.example.golan;
 
-import static androidx.core.content.ContextCompat.getSystemService;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.ui.AppBarConfiguration;
 
-import android.app.Activity;
 import android.app.FragmentManager;
-import com.example.golan.databinding.ActivityMainBinding;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.opencsv.CSVWriter;
 
 import android.app.FragmentTransaction;
-import android.app.ProgressDialog;
-import android.content.Context;
-import android.database.Cursor;
-import android.location.LocationManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.Handler;
-import android.os.Message;
 import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
 public class MainActivity extends AppCompatActivity {
-    public static Area area;
+    public static Section section;
     public static Item item;
     public static double latitude = -1;
     public static double longitude = -1;
@@ -53,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         title = (TextView) findViewById(R.id.actionText);
         setActionTitle("Hi");
         FragmentManager fm = getFragmentManager();
-        AreasView fragment1 = new AreasView();
+        SectionsList fragment1 = new SectionsList();
         //Csv fragment1 = new Csv();
         FragmentTransaction t = fm.beginTransaction();
         t.replace(R.id.root_layout2, fragment1);

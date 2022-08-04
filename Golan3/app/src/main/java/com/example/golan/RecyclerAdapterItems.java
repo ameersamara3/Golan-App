@@ -29,7 +29,7 @@ public class RecyclerAdapterItems extends RecyclerView.Adapter<RecyclerAdapterIt
     public class MyViewHolder extends RecyclerView.ViewHolder{
         private TextView distance;
         private TextView nameTxt;
-        private Area area;
+        private Section section;
 
         private MaterialButton seeitems;
         public  MyViewHolder(final View view){
@@ -65,7 +65,7 @@ public class RecyclerAdapterItems extends RecyclerView.Adapter<RecyclerAdapterIt
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         context=parent.getContext();
-        View itemView= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_item_format,parent,false);
+        View itemView= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_format,parent,false);
         return new MyViewHolder(itemView);
     }
 
